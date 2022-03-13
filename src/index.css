@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Nunito:wght@200;300;400;500;600;700;800&family=Rubik:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+p, ::placeholder {
+  font-family: 'Nunito', sans-serif;
+}
+
+input {
+  font-weight: 600;
+}
+
+h1 {
+  font-family: 'Rubik', 'Poppins', sans-serif;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder {
+   text-align: center;
+}
+
+::-moz-placeholder {
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   text-align: center;
+}
