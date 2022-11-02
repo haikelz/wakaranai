@@ -5,8 +5,14 @@
   import Card from "../lib/components/Card.svelte";
   import MetaTitle from "../lib/components/MetaTitle.svelte";
 
-  let result: any = localStorage.getItem("result");
-  $: result = JSON.parse(localStorage.getItem("result"));
+  /**
+   * - Jika localStorage bernilai null, maka setItem nya ke array terlebih dahulu
+   * - Jika tidak, maka parse-kan nilai localStorage yang tersedia
+   */
+  let result =
+    JSON.parse(localStorage.getItem("result")) === null
+      ? []
+      : JSON.parse(localStorage.getItem("result"));
 
   function handleDelete(id: string) {
     const data = [...result];

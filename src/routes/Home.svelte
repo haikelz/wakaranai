@@ -22,15 +22,23 @@
   let inputRomaji: string = "";
   let isCopiedHiragana: boolean = false;
   let isCopiedKatakana: boolean = false;
-  let result = [];
   let isSaved: boolean = false;
+
+  /**
+   * - Jika localStorage bernilai null, maka setItem nya ke array terlebih dahulu
+   * - Jika tidak, maka parse-kan nilai localStorage yang tersedia
+   */
+  let result =
+    JSON.parse(localStorage.getItem("result")) === null
+      ? []
+      : JSON.parse(localStorage.getItem("result"));
 
   $: katakana = toKatakana(inputRomaji);
   $: hiragana = toHiragana(inputRomaji);
-  $: result =
-    localStorage.getItem("result") &&
-    JSON.parse(localStorage.getItem("result"));
 
+  saveData(result);
+
+  console.log(result);
   function handleChange<T extends InputRomajiEvent>(event: T) {
     inputRomaji = (event.target as HTMLInputElement).value;
   }
@@ -47,6 +55,7 @@
       katakana: katakana,
       hiragana: hiragana,
     });
+
     result = data;
     saveData(result);
   }
