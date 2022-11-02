@@ -6,7 +6,7 @@
 
 <Motion
   let:motion
-  transition={{ duration: 0.7, delay: 1.7 }}
+  transition={{ duration: 0.5, delay: 1.5 }}
   initial={{ opacity: 0, scale: 0 }}
   animate={{ opacity: 1, scale: 1 }}
 >

@@ -25,6 +25,8 @@
     "vite": "^3.2.0"
   },
   "dependencies": {
+    "nanoid": "^4.0.0",
+    "svelte-navigator": "^3.2.2",
     "wanakana": "^5.0.2"
   }
 }
