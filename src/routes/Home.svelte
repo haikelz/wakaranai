@@ -38,7 +38,6 @@
 
   saveData(result);
 
-  console.log(result);
   function handleChange<T extends InputRomajiEvent>(event: T) {
     inputRomaji = (event.target as HTMLInputElement).value;
   }
